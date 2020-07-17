@@ -2,10 +2,14 @@
   "name": "HelpDesk-backEnd",
   "version": "1.0.0",
   "main": "server.js",
-
-"scripts": { "prestart": "npm install", "start": "forever server.js", "watch": "forever -w server.js" }, 
-"engines": { "node": "11.x" },
- 
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node --harmony server.js",
+    "watch": "forever -w server.js"
+  },
+  "engines": {
+    "node": "11.x"
+  },
   "author": "GK",
   "license": "MIT",
   "devDependencies": {
