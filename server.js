@@ -17,7 +17,7 @@ const ticketsAll = [{
   status: 'TODO',
   created: '2020-07-17 13:32',
 }];
-
+let h3 = document.querySelector("h3");
 app.use(koaBody({
   urlencoded: true,
 }));
@@ -32,6 +32,7 @@ app.use(async (ctx) => {
   switch (method) {
     case 'allTickets':
       ctx.response.body = ticketsAll;
+      h3.innerHTML = ticketsAll;
       return;
     case 'ticketById':
       const {
@@ -39,6 +40,7 @@ app.use(async (ctx) => {
       } = ctx.request.query;
       const result = ticketsAll.filter((tic) => tic.id === id);
       ctx.response.body = result;
+      h3.innerHTML = result;
       return;
     case 'delById':
       const js = JSON.parse(ctx.request.body);
