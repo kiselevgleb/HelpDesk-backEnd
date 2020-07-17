@@ -3,18 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "startWeb": "webpack-dev-server --mode development",
-    "start2": "node server.js",
-    "build": "webpack --mode production",
+    "show:dist": "live-server dist",
+    "start": "forever server.js",
+    "watch": "forever -w server.js",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 0",
     "coverage": "jest --coverage",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
-    "preshow:dist": "npm run build",
-    "show:dist": "live-server dist",
-    "start": "forever server.js",
-    "watch": "forever -w server.js"
+    "preshow:dist": "npm run build"
   },
   "author": "GK",
   "license": "MIT",
