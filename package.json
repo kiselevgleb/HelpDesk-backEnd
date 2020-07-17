@@ -2,17 +2,10 @@
   "name": "HelpDesk-backEnd",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "show:dist": "live-server dist",
-    "start": "forever server.js",
-    "watch": "forever -w server.js",
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "coverage": "jest --coverage",
-    "preshow:coverage": "npm run coverage",
-    "show:coverage": "live-server coverage/lcov-report",
-    "preshow:dist": "npm run build"
-  },
+
+"scripts": { "prestart": "npm install", "start": "forever server.js", "watch": "forever -w server.js" }, 
+"engines": { "node": "11.x" },
+ 
   "author": "GK",
   "license": "MIT",
   "devDependencies": {
