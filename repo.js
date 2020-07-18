@@ -8,6 +8,17 @@ export {
   delById,
 };
 let h3 = document.querySelector('h3');
+const xhr = new XMLHttpRequest();
+xhr.addEventListener('load', () => {
+  if (xhr.status >= 200 && xhr.status < 300) {
+      try {
+        allTickets();
+          const data = JSON.parse(xhr.responseText);
+      } catch (e) {
+          console.error(e);
+      }
+  }
+});
 
 function allTickets() {
   const xhr = new XMLHttpRequest();
